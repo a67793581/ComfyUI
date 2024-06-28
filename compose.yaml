@@ -1,0 +1,10 @@
+services:
+  comfy_ui:
+    container_name: comfy_ui
+    image: nvidia/cuda:12.4.0-base-centos7
+    volumes:
+      - ./:/code
+    ports:
+      - "9100:8188"
+    command:
+      - -c python /code/main.py --multi-user --use-split-cross-attention
