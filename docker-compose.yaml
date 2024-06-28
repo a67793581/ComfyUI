@@ -6,5 +6,3 @@ services:
       - ./:/code
     ports:
       - "9100:8188"
-    command:
-      - -c python /code/main.py --multi-user --use-split-cross-attention
