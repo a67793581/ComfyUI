@@ -1,7 +1,9 @@
 services:
   comfy:
     container_name: comfy
-    image: nvidia/cuda:12.4.0-base-centos7
+    build:
+      context: .
+      dockerfile: Dockerfile
     volumes:
       - ./:/code
     ports:
