@@ -34,7 +34,7 @@ WORKDIR /app
 COPY . /app
 
 # 安装应用所需的 Python 包（如果有的话，根据实际需求替换 <your_requirements_file>）
-RUN pip3.10 install -r /app/requirements.txt
+RUN pip  install -r /app/requirements.txt
 
 # 定义启动命令（以你的应用启动脚本或命令替换）
- CMD ["python3.10", "/app/main.py --use-split-cross-attention --highvram"]
+ CMD ["python", "/app/main.py --use-split-cross-attention --highvram"]
