@@ -3,6 +3,7 @@ version: '3.3'
 services:
   comfy:
     container_name: comfy
+    tty: true
     build:
       context: .
       dockerfile: Dockerfile
