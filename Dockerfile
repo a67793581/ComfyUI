@@ -1,11 +1,11 @@
 FROM nvidia/cuda:12.4.0-base-centos7
 
 # 更新系统包并安装依赖
-RUN yum update -y && \
-    yum install -y epel-release && \
-    yum install -y https://centos7.iuscommunity.org/ius-release.rpm && \
-    yum install -y gcc make automake gcc-c++ zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel tk-devel libffi-devel libcurl-devel python36-devel python36u-pip && \
-    yum clean all
+RUN #yum update -y && \
+#    yum install -y epel-release && \
+#    yum install -y https://centos7.iuscommunity.org/ius-release.rpm && \
+#    yum install -y gcc make automake gcc-c++ zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel tk-devel libffi-devel libcurl-devel python36-devel python36u-pip && \
+#    yum clean all
 
 # 安装 Python 3.10 通过 IUS 社区仓库提供的 python310u 包
 RUN yum install -y python310u python310u-pip
