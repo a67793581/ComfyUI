@@ -1,6 +1,6 @@
 services:
-  comfy_ui:
-    container_name: comfy_ui
+  comfy:
+    container_name: comfy
     image: nvidia/cuda:12.4.0-base-centos7
     volumes:
       - ./:/code
