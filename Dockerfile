@@ -17,5 +17,7 @@ RUN apt-get update && \
 
 WORKDIR /code
 
-RUN pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/ && pip install -r requirements.txt
+COPY . /code
+
+RUN pwd && ls && cd /code && pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/ && pip install -r requirements.txt
 CMD ["python3", "main.py","--highvram"]
