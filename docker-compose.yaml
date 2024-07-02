@@ -14,4 +14,4 @@ services:
       - .:/code
     ports:
       - "9100:8188"
-    command: ["python3", "main.py", "--highvram", "--cuda-device", "0"]
+    command: [ "python3", "main.py", "--listen","--highvram", "--cuda-device", "0" ]
