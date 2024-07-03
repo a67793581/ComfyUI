@@ -15,3 +15,101 @@ services:
     ports:
       - "9100:8188"
     command: [ "python3", "main.py", "--listen","--highvram", "--cuda-device", "0" ]
+  comfy1:
+    container_name: comfy1
+    tty: true
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/code
+    ports:
+      - "9101:8188"
+    command: [ "python3", "main.py", "--listen","--highvram", "--cuda-device", "1" ]
+  comfy2:
+    container_name: comfy2
+    tty: true
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/code
+    ports:
+      - "9102:8188"
+    command: [ "python3", "main.py", "--listen","--highvram", "--cuda-device", "2" ]
+  comfy3:
+    container_name: comfy3
+    tty: true
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/code
+    ports:
+      - "9103:8188"
+    command: [ "python3", "main.py", "--listen","--highvram", "--cuda-device", "3" ]
+  comfy4:
+    container_name: comfy4
+    tty: true
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/code
+    ports:
+      - "9104:8188"
+    command: [ "python3", "main.py", "--listen","--highvram", "--cuda-device", "4" ]
+  comfy5:
+    container_name: comfy5
+    tty: true
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/code
+    ports:
+      - "9105:8188"
+    command: [ "python3", "main.py", "--listen","--highvram", "--cuda-device", "5" ]
+  comfy6:
+    container_name: comfy6
+    tty: true
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/code
+    ports:
+      - "9106:8188"
+    command: [ "python3", "main.py", "--listen","--highvram", "--cuda-device", "6" ]
+  comfy7:
+    container_name: comfy7
+    tty: true
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/code
+    ports:
+      - "9107:8188"
+    command: [ "python3", "main.py", "--listen","--highvram", "--cuda-device", "7" ]
