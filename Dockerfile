@@ -11,4 +11,6 @@ WORKDIR /code
 
 COPY . /code
 
-RUN pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/ && pip install -r requirements.txt
+RUN pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/ && \
+    pip install -r requirements.txt && \
+    rm -rf /code/*
