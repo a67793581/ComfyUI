@@ -7,7 +7,7 @@ RUN apt-get update && \
     apt-get install -y software-properties-common  apt-utils && \
     add-apt-repository ppa:deadsnakes/ppa && \
     apt-get update && \
-    apt-get install -y ffmpeg git wget python3.10 python3.10-dev python3.10-distutils&& \
+    apt-get install -y ffmpeg git wget python3.10 python3.10-dev python3.10-distutils python3.10-venv&& \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
