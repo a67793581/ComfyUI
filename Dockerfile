@@ -4,7 +4,7 @@ ENV LANG C.UTF-8
 
 # 更新软件包列表，安装基础工具、添加PPA、安装所有需要的软件包，最后清理
 RUN apt-get update && \
-    apt-get install -y software-properties-common && \
+    apt-get install -y software-properties-common  apt-utils && \
     add-apt-repository ppa:deadsnakes/ppa && \
     apt-get update && \
     apt-get install -y ffmpeg git wget python3.10 python3.10-dev python3.10-distutils python3.10-venv && \
