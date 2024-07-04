@@ -4,7 +4,6 @@ services:
   comfy:
     container_name: comfy
     tty: true
-    runtime: nvidia
     environment:
       - NVIDIA_VISIBLE_DEVICES=all
     build:
