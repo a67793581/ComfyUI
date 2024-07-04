@@ -1,9 +1,10 @@
 FROM comfy_base:latest
 
 ENV LANG C.UTF-8
+# 设置环境变量，使用阿里云pip镜像源
+ARG PIP_INDEX_URL=https://mirrors.aliyun.com/pypi/simple/
 
-RUN export PIP_INDEX_URL=https://pypi.tuna.tsinghua.edu.cn/simple && \
-    apt-get install -y python3.10&&  \
+RUN apt-get install -y python3.10 &&  \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* &&\
     wget https://mirrors.aliyun.com/pypi/simple/get-pip.py && \
