@@ -2,7 +2,7 @@ FROM comfy_base:latest
 
 ENV LANG C.UTF-8
 
-RUN python3.10 python3.10-dev python3.10-distutils python3.10-venv &&  \
+RUN apt-get install -y python3.10&&  \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* &&\
     wget https://bootstrap.pypa.io/get-pip.py && \
