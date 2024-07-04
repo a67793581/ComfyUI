@@ -21,7 +21,7 @@ COPY --from=0 / /
 WORKDIR /code
 
 # 复制项目文件到容器中
-COPY . /code
+COPY requirements.txt /code/requirements.txt
 
 # 设置pip的镜像源并安装项目依赖
 RUN python3.10 -m pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/ && \
