@@ -24,7 +24,7 @@ WORKDIR /code
 COPY . /code
 
 # 设置pip的镜像源并安装项目依赖
-RUN pip3.10 config set global.index-url https://mirrors.aliyun.com/pypi/simple/ && \
-    pip3.10 install -r requirements.txt && \
+RUN python3.10 -m pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/ && \
+    python3.10 -m pip install -r requirements.txt && \
     # 如果不需要保留源代码，可以在安装完依赖后清理
     rm -rf /code/*
