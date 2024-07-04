@@ -13,6 +13,18 @@ services:
     volumes:
       - .:/code
     ports:
+      - "8188:8188"
+    command: [ "python3.10", "main.py", "--listen","--highvram", "--cuda-device", "0" ]
+  comfy0:
+    container_name: comfy0
+    tty: true
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+    image: comfyui_comfy:latest
+    volumes:
+      - .:/code
+    ports:
       - "9100:8188"
     command: [ "python3.10", "main.py", "--listen","--highvram", "--cuda-device", "0" ]
   comfy1:
