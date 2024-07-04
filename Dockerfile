@@ -11,7 +11,7 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-RUN wget https://bootstrap.pypa.io/get-pip.py -q -O get-pip.py && \
+RUN wget https://bootstrap.pypa.io/get-pip.py && \
     python3.10 get-pip.py && \
     rm -rf get-pip.py
 
