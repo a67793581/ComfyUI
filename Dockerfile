@@ -1,4 +1,4 @@
-FROM nvidia/cuda:12.5.0-base-ubuntu20.04
+FROM nvidia/cuda:12.5.0-base-ubuntu22.04
 
 ENV LANG C.UTF-8
 
