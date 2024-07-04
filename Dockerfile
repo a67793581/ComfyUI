@@ -2,28 +2,29 @@ FROM nvidia/cuda:12.5.0-base-ubuntu22.04
 
 ENV LANG C.UTF-8
 
-# 更新软件包列表
-RUN apt-get update && apt-get install -y software-properties-common
+# 更新软件包列表，安装基础工具、添加PPA、安装所有需要的软件包，最后清理
+RUN apt-get update && \
+    apt-get install -y software-properties-common && \
+    add-apt-repository ppa:deadsnakes/ppa && \
+    apt-get update && \
+    apt-get install -y ffmpeg git wget python3.10 python3.10-dev python3.10-distutils python3.10-venv && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
-# 添加Dead Snakes PPA以安装Python 3.10
-RUN add-apt-repository ppa:deadsnakes/ppa && apt-get update
+# 这里实现"做一层镜像隔离"，即在所有基础依赖安装后创建新的镜像层
+FROM nvidia/cuda:12.5.0-base-ubuntu22.04 AS build-env
 
-# 安装FFmpeg和Python 3.10及其开发工具
-RUN apt-get install -y ffmpeg git wget
-RUN apt-get install -y python3.10 python3.10-dev python3.10-distutils python3.10-venv
+ENV LANG C.UTF-8
 
-# 创建符号链接使得python3和pip指向Python 3.10版本
-RUN ln -sf /usr/bin/python3.10 /usr/bin/python3 && ln -sf /usr/bin/pip3.10 /usr/bin/pip
-
-# 清理缓存并删除下载的包文件
-RUN apt-get clean && rm -rf /var/lib/apt/lists/*
-
-
+COPY --from=0 / /
 
 WORKDIR /code
 
+# 复制项目文件到容器中
 COPY . /code
 
-RUN pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/ && \
-    pip install -r requirements.txt && \
+# 设置pip的镜像源并安装项目依赖
+RUN pip3.10 config set global.index-url https://mirrors.aliyun.com/pypi/simple/ && \
+    pip3.10 install -r requirements.txt && \
+    # 如果不需要保留源代码，可以在安装完依赖后清理
     rm -rf /code/*
