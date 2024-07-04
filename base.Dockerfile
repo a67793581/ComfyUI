@@ -1,6 +1,7 @@
 FROM nvidia/cuda:12.5.0-base-ubuntu22.04
 
 ENV LANG C.UTF-8
+ENV TZ=Asia/Shangha
 
 # 更新软件包列表，安装基础工具、添加PPA、安装所有需要的软件包，最后清理
 RUN apt-get update && \

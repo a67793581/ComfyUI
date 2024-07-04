@@ -1,6 +1,7 @@
 FROM comfy_base:latest
 
 ENV LANG C.UTF-8
+ENV TZ=Asia/Shangha
 # 设置环境变量，使用阿里云pip镜像源
 ARG PIP_INDEX_URL=https://mirrors.aliyun.com/pypi/simple/
 
