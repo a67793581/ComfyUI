@@ -15,13 +15,6 @@ RUN wget https://bootstrap.pypa.io/get-pip.py && \
     python3.10 get-pip.py && \
     rm -rf get-pip.py
 
-# 这里实现"做一层镜像隔离"，即在所有基础依赖安装后创建新的镜像层
-FROM nvidia/cuda:12.5.0-base-ubuntu22.04 AS build-env
-
-ENV LANG C.UTF-8
-
-COPY --from=0 / /
-
 WORKDIR /code
 
 # 复制项目文件到容器中
