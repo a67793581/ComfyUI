@@ -1,20 +1,6 @@
 version: '2.4'
 
 services:
-  comfy:
-    container_name: comfy
-    tty: true
-    runtime: nvidia
-    environment:
-      - NVIDIA_VISIBLE_DEVICES=all
-    build:
-      context: .
-      dockerfile: Dockerfile
-    volumes:
-      - .:/code
-    ports:
-      - "8188:8188"
-    command: [ "python3.10", "main.py", "--listen","--highvram", "--cuda-device", "0" ]
   comfy0:
     container_name: comfy0
     tty: true
