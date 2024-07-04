@@ -1,1 +1,1 @@
-docker build -t comfy .
+docker build -t comfy -f tag.Dockerfile .

@@ -1,1 +1,1 @@
-docker build -t comfyui_comfy .
+docker build -t comfyui_comfy -f python.Dockerfile .

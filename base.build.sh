@@ -1,1 +1,1 @@
-docker build -t comfy_base .
+docker build -t comfy_base -f base.Dockerfile .
