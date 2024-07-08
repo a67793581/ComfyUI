@@ -19,7 +19,7 @@ RUN sed -i 's@http://security.ubuntu.com/ubuntu@http://mirrors.aliyun.com/ubuntu
 #    rm -rf /var/lib/apt/lists/*
 
 RUN apt-get update && \
-    apt-get install -y gcc x86_64-linux-gnu-gcc && \
+    apt-get install -y gcc  && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 #RUN python3.10 -m pip install matplotlib onnxruntime scikit-image imageio-ffmpeg numba trimesh pydantic watchdog pyOpenSSL
