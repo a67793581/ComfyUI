@@ -1,4 +1,4 @@
-FROM comfyui-comfy:latest
+FROM comfy:1.0
 
 ENV LANG C.UTF-8
 ENV TZ=Asia/Shangha
@@ -15,4 +15,4 @@ RUN apt-get update && \
     ln -fs /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
     dpkg-reconfigure -f noninteractive tzdata && \
     apt-get install -y libopencv-dev python3-opencv
-RUN python3.10 -m pip install matplotlib onnxruntime scikit-image imageio-ffmpeg
+RUN python3.10 -m pip install matplotlib onnxruntime scikit-image imageio-ffmpeg numba trimesh pydantic watchdog pyOpenSSL
