@@ -18,5 +18,5 @@ RUN sed -i 's@http://security.ubuntu.com/ubuntu@http://mirrors.aliyun.com/ubuntu
 #    apt-get clean && \
 #    rm -rf /var/lib/apt/lists/*
 #RUN python3.10 -m pip install matplotlib onnxruntime scikit-image imageio-ffmpeg numba trimesh pydantic watchdog pyOpenSSL
-RUN #python3.10 -m pip install omegaconf onnxruntime-gpu
+#RUN python3.10 -m pip install omegaconf onnxruntime-gpu
 RUN python3.10 -m pip sniffio, h11, exceptiongroup, httpcore, anyio, httpx, openai
