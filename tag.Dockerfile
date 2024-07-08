@@ -14,5 +14,7 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends tzdata && \
     ln -fs /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
     dpkg-reconfigure -f noninteractive tzdata && \
-    apt-get install -y libopencv-dev python3-opencv
+    apt-get install -y libopencv-dev python3-opencv && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 RUN python3.10 -m pip install matplotlib onnxruntime scikit-image imageio-ffmpeg numba trimesh pydantic watchdog pyOpenSSL
