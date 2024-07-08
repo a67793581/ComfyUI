@@ -1,4 +1,4 @@
-FROM comfy:1.0
+FROM comfy:2.0
 
 ENV LANG C.UTF-8
 ENV TZ=Asia/Shangha
@@ -17,4 +17,4 @@ RUN apt-get update && \
     apt-get install -y libopencv-dev python3-opencv && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
-RUN python3.10 -m pip install matplotlib onnxruntime scikit-image imageio-ffmpeg numba trimesh pydantic watchdog pyOpenSSL
+RUN python3.10 -m pip install matplotlib onnxruntime scikit-image imageio-ffmpeg numba trimesh pydantic watchdog pyOpenSSL omegaconf
