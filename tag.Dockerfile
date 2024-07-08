@@ -20,4 +20,4 @@ RUN sed -i 's@http://security.ubuntu.com/ubuntu@http://mirrors.aliyun.com/ubuntu
 #RUN python3.10 -m pip install matplotlib onnxruntime scikit-image imageio-ffmpeg numba trimesh pydantic watchdog pyOpenSSL
 #RUN python3.10 -m pip install omegaconf onnxruntime-gpu
 #RUN python3.10 -m pip install sniffio h11 exceptiongroup httpcore anyio httpx openai
-RUN python3.10 -m pip install llama-cpp-python simple_lama_inpainting
+RUN python3.10 -m pip install llama-cpp-python simple_lama_inpainting rembg[gpu] clip-interrogator
