@@ -1,4 +1,4 @@
-FROM comfy:3.0
+FROM comfy:4.0
 
 ENV LANG C.UTF-8
 ENV TZ=Asia/Shangha
@@ -19,4 +19,5 @@ RUN sed -i 's@http://security.ubuntu.com/ubuntu@http://mirrors.aliyun.com/ubuntu
 #    rm -rf /var/lib/apt/lists/*
 #RUN python3.10 -m pip install matplotlib onnxruntime scikit-image imageio-ffmpeg numba trimesh pydantic watchdog pyOpenSSL
 #RUN python3.10 -m pip install omegaconf onnxruntime-gpu
-RUN python3.10 -m pip install sniffio h11 exceptiongroup httpcore anyio httpx openai
+#RUN python3.10 -m pip install sniffio h11 exceptiongroup httpcore anyio httpx openai
+RUN python3.10 -m pip install llama-cpp-python simple_lama_inpainting
