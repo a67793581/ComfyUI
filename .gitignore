@@ -19,6 +19,7 @@ venv/
 /user/
 /custom_nodes_bak
 custom_nodes_bak
+/custom_nodes/*
 *.log
 /queues/*
 !/queues/example_queue.py.example

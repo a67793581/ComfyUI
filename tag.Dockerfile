@@ -2,6 +2,7 @@ FROM comfy:5.0
 
 ENV LANG C.UTF-8
 ENV TZ=Asia/Shangha
+ENV NUMBA_THREADING_LAYER_PRIORITY="omp tbb workqueue"
 # 设置环境变量，使用阿里云pip镜像源
 ARG PIP_INDEX_URL=https://mirrors.aliyun.com/pypi/simple/
 # 使用阿里云的源替换默认源
@@ -23,11 +24,12 @@ RUN sed -i 's@http://security.ubuntu.com/ubuntu@http://mirrors.aliyun.com/ubuntu
 #    apt-get clean && \
 #    rm -rf /var/lib/apt/lists/*
 
-RUN add-apt-repository -y ppa:ubuntu-toolchain-r/test && apt-get install -y libtbb-dev
+#RUN add-apt-repository -y ppa:ubuntu-toolchain-r/test && apt-get install -y libtbb-dev
 
 
 #RUN python3.10 -m pip install matplotlib onnxruntime scikit-image imageio-ffmpeg numba trimesh pydantic watchdog pyOpenSSL
 #RUN python3.10 -m pip install omegaconf onnxruntime-gpu
 #RUN python3.10 -m pip install sniffio h11 exceptiongroup httpcore anyio httpx openai
 #RUN python3.10 -m pip install llama-cpp-python simple_lama_inpainting rembg[gpu] clip-interrogator
-RUN python3.10 -m pip install  opencv-python
+#RUN python3.10 -m pip install opencv-python
+RUN python3.10 -m pip install --upgrade tbb
