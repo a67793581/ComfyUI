@@ -2,7 +2,7 @@ version: '2.4'
 
 services:
   comfy0:
-    container_name: comfy0
+    container_name: comfy_dev0
     tty: true
     runtime: nvidia
     environment:
@@ -14,7 +14,7 @@ services:
       - "9200:8188"
     command: [ "python3.10", "main.py", "--listen","--highvram", "--cuda-device", "0" ]
   comfy1:
-    container_name: comfy1
+    container_name: comfy_dev1
     tty: true
     runtime: nvidia
     environment:
