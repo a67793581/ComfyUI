@@ -1,4 +1,4 @@
-FROM comfy:4.0
+FROM comfy:5.0
 
 ENV LANG C.UTF-8
 ENV TZ=Asia/Shangha
@@ -18,11 +18,16 @@ RUN sed -i 's@http://security.ubuntu.com/ubuntu@http://mirrors.aliyun.com/ubuntu
 #    apt-get clean && \
 #    rm -rf /var/lib/apt/lists/*
 
-RUN apt-get update && \
-    apt-get install -y gcc g++ make  && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+#RUN apt-get update && \
+#    apt-get install -y gcc g++ make  && \
+#    apt-get clean && \
+#    rm -rf /var/lib/apt/lists/*
+
+RUN add-apt-repository -y ppa:ubuntu-toolchain-r/test && apt-get install -y libtbb-dev
+
+
 #RUN python3.10 -m pip install matplotlib onnxruntime scikit-image imageio-ffmpeg numba trimesh pydantic watchdog pyOpenSSL
 #RUN python3.10 -m pip install omegaconf onnxruntime-gpu
 #RUN python3.10 -m pip install sniffio h11 exceptiongroup httpcore anyio httpx openai
-RUN python3.10 -m pip install llama-cpp-python simple_lama_inpainting rembg[gpu] clip-interrogator
+#RUN python3.10 -m pip install llama-cpp-python simple_lama_inpainting rembg[gpu] clip-interrogator
+RUN python3.10 -m pip install  opencv-python
