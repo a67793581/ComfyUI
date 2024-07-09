@@ -17,7 +17,7 @@ venv/
 !/web/extensions/core/
 /tests-ui/data/object_info.json
 /user/
-custom_nodes_bak
+/custom_nodes_bak
 *.log
 /queues/*
 !/queues/example_queue.py.example
