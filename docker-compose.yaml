@@ -9,7 +9,6 @@ services:
       - NVIDIA_VISIBLE_DEVICES=all
     image: comfy:latest
     volumes:
-      - .:/code
       - .:/root/comfyui_info/ComfyUI
     ports:
       - "9100:8188"
@@ -22,7 +21,6 @@ services:
       - NVIDIA_VISIBLE_DEVICES=all
     image: comfy:latest
     volumes:
-      - .:/code
       - .:/root/comfyui_info/ComfyUI
     ports:
       - "9101:8188"
@@ -35,7 +33,6 @@ services:
       - NVIDIA_VISIBLE_DEVICES=all
     image: comfy:latest
     volumes:
-      - .:/code
       - .:/root/comfyui_info/ComfyUI
     ports:
       - "9102:8188"
@@ -48,7 +45,6 @@ services:
       - NVIDIA_VISIBLE_DEVICES=all
     image: comfy:latest
     volumes:
-      - .:/code
       - .:/root/comfyui_info/ComfyUI
     ports:
       - "9103:8188"
@@ -61,7 +57,6 @@ services:
       - NVIDIA_VISIBLE_DEVICES=all
     image: comfy:latest
     volumes:
-      - .:/code
       - .:/root/comfyui_info/ComfyUI
     ports:
       - "9104:8188"
@@ -74,7 +69,6 @@ services:
       - NVIDIA_VISIBLE_DEVICES=all
     image: comfy:latest
     volumes:
-      - .:/code
       - .:/root/comfyui_info/ComfyUI
     ports:
       - "9105:8188"
@@ -87,7 +81,6 @@ services:
       - NVIDIA_VISIBLE_DEVICES=all
     image: comfy:latest
     volumes:
-      - .:/code
       - .:/root/comfyui_info/ComfyUI
     ports:
       - "9106:8188"
@@ -100,7 +93,6 @@ services:
       - NVIDIA_VISIBLE_DEVICES=all
     image: comfy:latest
     volumes:
-      - .:/code
       - .:/root/comfyui_info/ComfyUI
     ports:
       - "9107:8188"

@@ -32,4 +32,6 @@ RUN sed -i 's@http://security.ubuntu.com/ubuntu@http://mirrors.aliyun.com/ubuntu
 #RUN python3.10 -m pip install sniffio h11 exceptiongroup httpcore anyio httpx openai
 #RUN python3.10 -m pip install llama-cpp-python simple_lama_inpainting rembg[gpu] clip-interrogator
 #RUN python3.10 -m pip install opencv-python
-RUN python3.10 -m pip install --upgrade tbb
+#RUN python3.10 -m pip install --upgrade tbb
+
+WORKDIR /root/comfyui_info/ComfyUI

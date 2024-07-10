@@ -13,8 +13,6 @@ RUN add-apt-repository ppa:deadsnakes/ppa  && \
     python3.10 get-pip.py && \
     rm -rf get-pip.py
 
-WORKDIR /code
-
 # 复制项目文件到容器中
 COPY requirements.txt /code/requirements.txt
 
