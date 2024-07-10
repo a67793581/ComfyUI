@@ -6,22 +6,22 @@ services:
     tty: true
     runtime: nvidia
     environment:
-      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_VISIBLE_DEVICES=0
     image: comfy:latest
     volumes:
       - .:/code
     ports:
       - "9200:8188"
-    command: [ "python3.10", "main.py", "--listen","--highvram", "--cuda-device", "0" ]
+    command: [ "python3.10", "main.py", "--listen" ]
   comfy1:
     container_name: comfy_dev1
     tty: true
     runtime: nvidia
     environment:
-      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_VISIBLE_DEVICES=1
     image: comfy:latest
     volumes:
       - .:/code
     ports:
       - "9201:8188"
-    command: [ "python3.10", "main.py", "--listen","--highvram", "--cuda-device", "1" ]
+    command: [ "python3.10", "main.py", "--listen" ]
