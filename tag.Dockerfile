@@ -1,4 +1,4 @@
-FROM comfy:6.0
+FROM comfy:7.0
 
 ENV LANG C.UTF-8
 ENV TZ=Asia/Shangha
