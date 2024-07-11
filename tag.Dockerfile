@@ -1,4 +1,4 @@
-FROM comfy:7.0
+FROM comfy:8.0
 
 ENV LANG C.UTF-8
 ENV TZ=Asia/Shangha
@@ -34,4 +34,5 @@ RUN sed -i 's@http://security.ubuntu.com/ubuntu@http://mirrors.aliyun.com/ubuntu
 #RUN python3.10 -m pip install opencv-python
 #RUN python3.10 -m pip install --upgrade tbb
 
+COPY . /root/comfyui_info/ComfyUI
 WORKDIR /root/comfyui_info/ComfyUI

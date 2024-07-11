@@ -9,7 +9,9 @@ services:
       - NVIDIA_VISIBLE_DEVICES=0
     image: comfy:latest
     volumes:
-      - .:/root/comfyui_info/ComfyUI
+      - ./models:/root/comfyui_info/ComfyUI/models
+      - ./custom_nodes:/root/comfyui_info/ComfyUI/custom_nodes
+      - ./output/comfy0:/root/comfyui_info/ComfyUI/output
     ports:
       - "9100:8188"
     command: [ "python3.10", "main.py", "--listen","--highvram"]
@@ -21,7 +23,9 @@ services:
       - NVIDIA_VISIBLE_DEVICES=1
     image: comfy:latest
     volumes:
-      - .:/root/comfyui_info/ComfyUI
+      - ./models:/root/comfyui_info/ComfyUI/models
+      - ./custom_nodes:/root/comfyui_info/ComfyUI/custom_nodes
+      - ./output/comfy1:/root/comfyui_info/ComfyUI/output
     ports:
       - "9101:8188"
     command: [ "python3.10", "main.py", "--listen","--highvram" ]
@@ -33,7 +37,9 @@ services:
       - NVIDIA_VISIBLE_DEVICES=2
     image: comfy:latest
     volumes:
-      - .:/root/comfyui_info/ComfyUI
+      - ./models:/root/comfyui_info/ComfyUI/models
+      - ./custom_nodes:/root/comfyui_info/ComfyUI/custom_nodes
+      - ./output/comfy2:/root/comfyui_info/ComfyUI/output
     ports:
       - "9102:8188"
     command: [ "python3.10", "main.py", "--listen","--highvram" ]
@@ -45,7 +51,9 @@ services:
       - NVIDIA_VISIBLE_DEVICES=3
     image: comfy:latest
     volumes:
-      - .:/root/comfyui_info/ComfyUI
+      - ./models:/root/comfyui_info/ComfyUI/models
+      - ./custom_nodes:/root/comfyui_info/ComfyUI/custom_nodes
+      - ./output/comfy3:/root/comfyui_info/ComfyUI/output
     ports:
       - "9103:8188"
     command: [ "python3.10", "main.py", "--listen","--highvram" ]
@@ -57,7 +65,9 @@ services:
       - NVIDIA_VISIBLE_DEVICES=4
     image: comfy:latest
     volumes:
-      - .:/root/comfyui_info/ComfyUI
+      - ./models:/root/comfyui_info/ComfyUI/models
+      - ./custom_nodes:/root/comfyui_info/ComfyUI/custom_nodes
+      - ./output/comfy4:/root/comfyui_info/ComfyUI/output
     ports:
       - "9104:8188"
     command: [ "python3.10", "main.py", "--listen","--highvram" ]
@@ -69,7 +79,9 @@ services:
       - NVIDIA_VISIBLE_DEVICES=5
     image: comfy:latest
     volumes:
-      - .:/root/comfyui_info/ComfyUI
+      - ./models:/root/comfyui_info/ComfyUI/models
+      - ./custom_nodes:/root/comfyui_info/ComfyUI/custom_nodes
+      - ./output/comfy5:/root/comfyui_info/ComfyUI/output
     ports:
       - "9105:8188"
     command: [ "python3.10", "main.py", "--listen","--highvram" ]
@@ -81,7 +93,9 @@ services:
       - NVIDIA_VISIBLE_DEVICES=6
     image: comfy:latest
     volumes:
-      - .:/root/comfyui_info/ComfyUI
+      - ./models:/root/comfyui_info/ComfyUI/models
+      - ./custom_nodes:/root/comfyui_info/ComfyUI/custom_nodes
+      - ./output/comfy6:/root/comfyui_info/ComfyUI/output
     ports:
       - "9106:8188"
     command: [ "python3.10", "main.py", "--listen","--highvram" ]
@@ -93,7 +107,9 @@ services:
       - NVIDIA_VISIBLE_DEVICES=7
     image: comfy:latest
     volumes:
-      - .:/root/comfyui_info/ComfyUI
+      - ./models:/root/comfyui_info/ComfyUI/models
+      - ./custom_nodes:/root/comfyui_info/ComfyUI/custom_nodes
+      - ./output/comfy7:/root/comfyui_info/ComfyUI/output
     ports:
       - "9107:8188"
     command: [ "python3.10", "main.py", "--listen","--highvram" ]
