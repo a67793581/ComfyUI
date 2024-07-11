@@ -11,7 +11,8 @@ services:
     volumes:
       - ./models:/root/comfyui_info/ComfyUI/models
       - ./custom_nodes:/root/comfyui_info/ComfyUI/custom_nodes
-      - ./output/comfy0:/root/comfyui_info/ComfyUI/output
+      - /data/filebrowser/comfyui_input/comfy0:/root/comfyui_info/ComfyUI/input
+      - /data/filebrowser/comfyui_output/comfy0:/root/comfyui_info/ComfyUI/output
     ports:
       - "9100:8188"
     command: [ "python3.10", "main.py", "--listen","--highvram"]
@@ -25,7 +26,8 @@ services:
     volumes:
       - ./models:/root/comfyui_info/ComfyUI/models
       - ./custom_nodes:/root/comfyui_info/ComfyUI/custom_nodes
-      - ./output/comfy1:/root/comfyui_info/ComfyUI/output
+      - /data/filebrowser/comfyui_input/comfy1:/root/comfyui_info/ComfyUI/input
+      - /data/filebrowser/comfyui_output/comfy1:/root/comfyui_info/ComfyUI/output
     ports:
       - "9101:8188"
     command: [ "python3.10", "main.py", "--listen","--highvram" ]
@@ -39,7 +41,8 @@ services:
     volumes:
       - ./models:/root/comfyui_info/ComfyUI/models
       - ./custom_nodes:/root/comfyui_info/ComfyUI/custom_nodes
-      - ./output/comfy2:/root/comfyui_info/ComfyUI/output
+      - /data/filebrowser/comfyui_input/comfy2:/root/comfyui_info/ComfyUI/input
+      - /data/filebrowser/comfyui_output/comfy2:/root/comfyui_info/ComfyUI/output
     ports:
       - "9102:8188"
     command: [ "python3.10", "main.py", "--listen","--highvram" ]
@@ -53,7 +56,8 @@ services:
     volumes:
       - ./models:/root/comfyui_info/ComfyUI/models
       - ./custom_nodes:/root/comfyui_info/ComfyUI/custom_nodes
-      - ./output/comfy3:/root/comfyui_info/ComfyUI/output
+      - /data/filebrowser/comfyui_input/comfy3:/root/comfyui_info/ComfyUI/input
+      - /data/filebrowser/comfyui_output/comfy3:/root/comfyui_info/ComfyUI/output
     ports:
       - "9103:8188"
     command: [ "python3.10", "main.py", "--listen","--highvram" ]
@@ -67,7 +71,8 @@ services:
     volumes:
       - ./models:/root/comfyui_info/ComfyUI/models
       - ./custom_nodes:/root/comfyui_info/ComfyUI/custom_nodes
-      - ./output/comfy4:/root/comfyui_info/ComfyUI/output
+      - /data/filebrowser/comfyui_input/comfy4:/root/comfyui_info/ComfyUI/input
+      - /data/filebrowser/comfyui_output/comfy4:/root/comfyui_info/ComfyUI/output
     ports:
       - "9104:8188"
     command: [ "python3.10", "main.py", "--listen","--highvram" ]
@@ -81,7 +86,8 @@ services:
     volumes:
       - ./models:/root/comfyui_info/ComfyUI/models
       - ./custom_nodes:/root/comfyui_info/ComfyUI/custom_nodes
-      - ./output/comfy5:/root/comfyui_info/ComfyUI/output
+      - /data/filebrowser/comfyui_input/comfy5:/root/comfyui_info/ComfyUI/input
+      - /data/filebrowser/comfyui_output/comfy5:/root/comfyui_info/ComfyUI/output
     ports:
       - "9105:8188"
     command: [ "python3.10", "main.py", "--listen","--highvram" ]
@@ -95,7 +101,8 @@ services:
     volumes:
       - ./models:/root/comfyui_info/ComfyUI/models
       - ./custom_nodes:/root/comfyui_info/ComfyUI/custom_nodes
-      - ./output/comfy6:/root/comfyui_info/ComfyUI/output
+      - /data/filebrowser/comfyui_input/comfy6:/root/comfyui_info/ComfyUI/input
+      - /data/filebrowser/comfyui_output/comfy6:/root/comfyui_info/ComfyUI/output
     ports:
       - "9106:8188"
     command: [ "python3.10", "main.py", "--listen","--highvram" ]
@@ -109,7 +116,8 @@ services:
     volumes:
       - ./models:/root/comfyui_info/ComfyUI/models
       - ./custom_nodes:/root/comfyui_info/ComfyUI/custom_nodes
-      - ./output/comfy7:/root/comfyui_info/ComfyUI/output
+      - /data/filebrowser/comfyui_input/comfy7:/root/comfyui_info/ComfyUI/input
+      - /data/filebrowser/comfyui_output/comfy7:/root/comfyui_info/ComfyUI/output
     ports:
       - "9107:8188"
     command: [ "python3.10", "main.py", "--listen","--highvram" ]
