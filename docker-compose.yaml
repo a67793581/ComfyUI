@@ -30,7 +30,7 @@ services:
       - /data/filebrowser/comfyui_output/comfy1:/root/comfyui_info/ComfyUI/output
     ports:
       - "9101:8188"
-    command: [ "python3.10", "main.py", "--listen","--highvram" ]
+    command: [ "python3.10", "main.py", "--listen","--highvram", "--queue_name=ExamplePromptQueue"]
   comfy2:
     container_name: comfy2
     tty: true
@@ -45,7 +45,7 @@ services:
       - /data/filebrowser/comfyui_output/comfy2:/root/comfyui_info/ComfyUI/output
     ports:
       - "9102:8188"
-    command: [ "python3.10", "main.py", "--listen","--highvram" ]
+    command: [ "python3.10", "main.py", "--listen","--highvram", "--queue_name=ExamplePromptQueue"]
   comfy3:
     container_name: comfy3
     tty: true
@@ -60,7 +60,7 @@ services:
       - /data/filebrowser/comfyui_output/comfy3:/root/comfyui_info/ComfyUI/output
     ports:
       - "9103:8188"
-    command: [ "python3.10", "main.py", "--listen","--highvram" ]
+    command: [ "python3.10", "main.py", "--listen","--highvram", "--queue_name=ExamplePromptQueue"]
   comfy4:
     container_name: comfy4
     tty: true
@@ -75,7 +75,7 @@ services:
       - /data/filebrowser/comfyui_output/comfy4:/root/comfyui_info/ComfyUI/output
     ports:
       - "9104:8188"
-    command: [ "python3.10", "main.py", "--listen","--highvram" ]
+    command: [ "python3.10", "main.py", "--listen","--highvram", "--queue_name=ExamplePromptQueue"]
   comfy5:
     container_name: comfy5
     tty: true
@@ -90,7 +90,7 @@ services:
       - /data/filebrowser/comfyui_output/comfy5:/root/comfyui_info/ComfyUI/output
     ports:
       - "9105:8188"
-    command: [ "python3.10", "main.py", "--listen","--highvram" ]
+    command: [ "python3.10", "main.py", "--listen","--highvram", "--queue_name=ExamplePromptQueue"]
   comfy6:
     container_name: comfy6
     tty: true
@@ -105,7 +105,7 @@ services:
       - /data/filebrowser/comfyui_output/comfy6:/root/comfyui_info/ComfyUI/output
     ports:
       - "9106:8188"
-    command: [ "python3.10", "main.py", "--listen","--highvram" ]
+    command: [ "python3.10", "main.py", "--listen","--highvram", "--queue_name=ExamplePromptQueue"]
   comfy7:
     container_name: comfy7
     tty: true
@@ -120,4 +120,4 @@ services:
       - /data/filebrowser/comfyui_output/comfy7:/root/comfyui_info/ComfyUI/output
     ports:
       - "9107:8188"
-    command: [ "python3.10", "main.py", "--listen","--highvram" ]
+    command: [ "python3.10", "main.py", "--listen","--highvram", "--queue_name=ExamplePromptQueue"]
