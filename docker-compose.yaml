@@ -15,7 +15,7 @@ services:
       - /data/filebrowser/comfyui_output/comfy_dev0:/root/comfyui_info/ComfyUI/output
     ports:
       - "9201:8188"
-    command: [ "python3.10", "main.py", "--listen"]
+    command: [ "python3.10", "main.py", "--listen", "--queue_name=ExamplePromptQueue"]
   comfy1:
     container_name: comfy_dev1
     tty: true
@@ -30,4 +30,4 @@ services:
       - /data/filebrowser/comfyui_output/comfy_dev1:/root/comfyui_info/ComfyUI/output
     ports:
       - "9200:8188"
-    command: [ "python3.10", "main.py", "--listen" ]
+    command: [ "python3.10", "main.py", "--listen", "--queue_name=ExamplePromptQueue"]
