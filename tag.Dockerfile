@@ -1,4 +1,4 @@
-FROM comfy:9.0
+FROM comfy:10.0
 
 ENV LANG C.UTF-8
 ENV TZ=Asia/Shangha
@@ -33,11 +33,11 @@ RUN sed -i 's@http://security.ubuntu.com/ubuntu@http://mirrors.aliyun.com/ubuntu
 #RUN python3.10 -m pip install llama-cpp-python simple_lama_inpainting rembg[gpu] clip-interrogator
 #RUN python3.10 -m pip install opencv-python
 
-RUN apt-get update && \
-    apt-get install -y python3-gdbm  && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
-RUN python3.10 -m pip install sentencepiece addict tomesd segment-anything piexif keyframed toolz pytz py-cpuinfo tzdata pandas seaborn ultralytics-thop ultralytics lark-parser diffusers GitPython
+#RUN apt-get update && \
+#    apt-get install -y python3-gdbm  && \
+#    apt-get clean && \
+#    rm -rf /var/lib/apt/lists/*
+#RUN python3.10 -m pip install sentencepiece addict tomesd segment-anything piexif keyframed toolz pytz py-cpuinfo tzdata pandas seaborn ultralytics-thop ultralytics lark-parser diffusers GitPython
 
 
 COPY . /root/comfyui_info/ComfyUI
