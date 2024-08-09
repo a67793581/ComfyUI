@@ -45,5 +45,5 @@ services:
       - /data/filebrowser/comfyui_input/comfy_pre:/root/comfyui_info/ComfyUI/input
       - /data/filebrowser/comfyui_output/comfy_pre:/root/comfyui_info/ComfyUI/output
     ports:
-      - "9101:8188"
+      - "9099:8188"
     command: [ "python3.10", "main.py", "--listen" ]
