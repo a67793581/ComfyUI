@@ -9,7 +9,7 @@ services:
       - NVIDIA_VISIBLE_DEVICES=0
     image: comfy:10.0
     volumes:
-      - ./models:/root/comfyui_info/ComfyUI/models
+      - /data/code/comfy_models:/root/comfyui_info/ComfyUI/models
       - ./custom_nodes:/root/comfyui_info/ComfyUI/custom_nodes
       - /data/filebrowser/comfyui_input/comfy0:/root/comfyui_info/ComfyUI/input
       - /data/filebrowser/comfyui_output/comfy0:/root/comfyui_info/ComfyUI/output
@@ -39,7 +39,7 @@ services:
       - NVIDIA_VISIBLE_DEVICES=2
     image: comfy:10.0
     volumes:
-      - ./models:/root/comfyui_info/ComfyUI/models
+      - /data/code/comfy_models:/root/comfyui_info/ComfyUI/models
       - ./custom_nodes:/root/comfyui_info/ComfyUI/custom_nodes
       - /data/filebrowser/comfyui_input/comfy2:/root/comfyui_info/ComfyUI/input
       - /data/filebrowser/comfyui_output/comfy2:/root/comfyui_info/ComfyUI/output
@@ -54,7 +54,7 @@ services:
       - NVIDIA_VISIBLE_DEVICES=3
     image: comfy:10.0
     volumes:
-      - ./models:/root/comfyui_info/ComfyUI/models
+      - /data/code/comfy_models:/root/comfyui_info/ComfyUI/models
       - ./custom_nodes:/root/comfyui_info/ComfyUI/custom_nodes
       - /data/filebrowser/comfyui_input/comfy3:/root/comfyui_info/ComfyUI/input
       - /data/filebrowser/comfyui_output/comfy3:/root/comfyui_info/ComfyUI/output
@@ -69,7 +69,7 @@ services:
       - NVIDIA_VISIBLE_DEVICES=4
     image: comfy:10.0
     volumes:
-      - ./models:/root/comfyui_info/ComfyUI/models
+      - /data/code/comfy_models:/root/comfyui_info/ComfyUI/models
       - ./custom_nodes:/root/comfyui_info/ComfyUI/custom_nodes
       - /data/filebrowser/comfyui_input/comfy4:/root/comfyui_info/ComfyUI/input
       - /data/filebrowser/comfyui_output/comfy4:/root/comfyui_info/ComfyUI/output
@@ -84,7 +84,7 @@ services:
       - NVIDIA_VISIBLE_DEVICES=5
     image: comfy:10.0
     volumes:
-      - ./models:/root/comfyui_info/ComfyUI/models
+      - /data/code/comfy_models:/root/comfyui_info/ComfyUI/models
       - ./custom_nodes:/root/comfyui_info/ComfyUI/custom_nodes
       - /data/filebrowser/comfyui_input/comfy5:/root/comfyui_info/ComfyUI/input
       - /data/filebrowser/comfyui_output/comfy5:/root/comfyui_info/ComfyUI/output
@@ -99,7 +99,7 @@ services:
       - NVIDIA_VISIBLE_DEVICES=6
     image: comfy:10.0
     volumes:
-      - ./models:/root/comfyui_info/ComfyUI/models
+      - /data/code/comfy_models:/root/comfyui_info/ComfyUI/models
       - ./custom_nodes:/root/comfyui_info/ComfyUI/custom_nodes
       - /data/filebrowser/comfyui_input/comfy6:/root/comfyui_info/ComfyUI/input
       - /data/filebrowser/comfyui_output/comfy6:/root/comfyui_info/ComfyUI/output
@@ -114,7 +114,7 @@ services:
       - NVIDIA_VISIBLE_DEVICES=7
     image: comfy:10.0
     volumes:
-      - ./models:/root/comfyui_info/ComfyUI/models
+      - /data/code/comfy_models:/root/comfyui_info/ComfyUI/models
       - ./custom_nodes:/root/comfyui_info/ComfyUI/custom_nodes
       - /data/filebrowser/comfyui_input/comfy7:/root/comfyui_info/ComfyUI/input
       - /data/filebrowser/comfyui_output/comfy7:/root/comfyui_info/ComfyUI/output
