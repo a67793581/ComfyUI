@@ -24,7 +24,7 @@ services:
       - NVIDIA_VISIBLE_DEVICES=1
     image: comfy:10.0
     volumes:
-      - ./models:/root/comfyui_info/ComfyUI/models
+      - /data/code/comfy_models:/root/comfyui_info/ComfyUI/models
       - ./custom_nodes:/root/comfyui_info/ComfyUI/custom_nodes
       - /data/filebrowser/comfyui_input/comfy1:/root/comfyui_info/ComfyUI/input
       - /data/filebrowser/comfyui_output/comfy1:/root/comfyui_info/ComfyUI/output
