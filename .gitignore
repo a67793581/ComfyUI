@@ -24,3 +24,4 @@ custom_nodes_bak
 !/queues/example_queue.py.example
 *.log
 web_custom_versions/
+.DS_Store
