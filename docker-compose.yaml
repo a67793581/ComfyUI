@@ -37,7 +37,7 @@ services:
     tty: true
     runtime: nvidia
     environment:
-      - NVIDIA_VISIBLE_DEVICES=1
+      - NVIDIA_VISIBLE_DEVICES=2
     image: comfy:10.02
     volumes:
       - /data/code/comfy_models:/root/comfyui_info/ComfyUI/models
