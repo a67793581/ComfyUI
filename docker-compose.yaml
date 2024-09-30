@@ -11,8 +11,8 @@ services:
     volumes:
       - /DATA/disk1/code/comfy_models:/root/comfyui_info/ComfyUI/models
       - ./custom_nodes:/root/comfyui_info/ComfyUI/custom_nodes
-      - /data/filebrowser/comfyui_input/comfy_dev0:/root/comfyui_info/ComfyUI/input
-      - /data/filebrowser/comfyui_output/comfy_dev0:/root/comfyui_info/ComfyUI/output
+      - /DATA/disk1/filebrowser/comfyui_input/comfy_dev0:/root/comfyui_info/ComfyUI/input
+      - /DATA/disk1/filebrowser/comfyui_output/comfy_dev0:/root/comfyui_info/ComfyUI/output
     ports:
       - "9201:8188"
     command: [ "python3.10", "main.py", "--listen", "--queue_name=ExamplePromptQueue" ]
@@ -26,8 +26,8 @@ services:
     volumes:
       - /DATA/disk1/code/comfy_models:/root/comfyui_info/ComfyUI/models
       - ./custom_nodes:/root/comfyui_info/ComfyUI/custom_nodes
-      - /data/filebrowser/comfyui_input/comfy_dev1:/root/comfyui_info/ComfyUI/input
-      - /data/filebrowser/comfyui_output/comfy_dev1:/root/comfyui_info/ComfyUI/output
+      - /DATA/disk1/filebrowser/comfyui_input/comfy_dev1:/root/comfyui_info/ComfyUI/input
+      - /DATA/disk1/filebrowser/comfyui_output/comfy_dev1:/root/comfyui_info/ComfyUI/output
     ports:
       - "9200:8188"
     command: [ "python3.10", "main.py", "--listen", "--queue_name=ExamplePromptQueue" ]
@@ -42,8 +42,8 @@ services:
     volumes:
       - /DATA/disk1/code/comfy_models:/root/comfyui_info/ComfyUI/models
       - ./custom_nodes:/root/comfyui_info/ComfyUI/custom_nodes
-      - /data/filebrowser/comfyui_input/comfy_pre:/root/comfyui_info/ComfyUI/input
-      - /data/filebrowser/comfyui_output/comfy_pre:/root/comfyui_info/ComfyUI/output
+      - /DATA/disk1/filebrowser/comfyui_input/comfy_pre:/root/comfyui_info/ComfyUI/input
+      - /DATA/disk1/filebrowser/comfyui_output/comfy_pre:/root/comfyui_info/ComfyUI/output
     ports:
       - "9099:8188"
     command: [ "python3.10", "main.py", "--listen=0.0.0.0" ]
