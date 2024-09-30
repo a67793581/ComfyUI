@@ -61,18 +61,3 @@ services:
     ports:
       - "9103:8188"
     command: [ "python3.10", "main.py", "--listen","--highvram", "--queue_name=ExamplePromptQueue" ]
-  comfy4:
-    container_name: comfy4
-    tty: true
-    runtime: nvidia
-    environment:
-      - NVIDIA_VISIBLE_DEVICES=4
-    image: comfy:10.02
-    volumes:
-      - /DATA/disk1/code/comfy_models:/root/comfyui_info/ComfyUI/models
-      - ./custom_nodes:/root/comfyui_info/ComfyUI/custom_nodes
-      - /DATA/disk1/filebrowser/comfyui_input/comfy4:/root/comfyui_info/ComfyUI/input
-      - /DATA/disk1/filebrowser/comfyui_output/comfy4:/root/comfyui_info/ComfyUI/output
-    ports:
-      - "9104:8188"
-    command: [ "python3.10", "main.py", "--listen","--highvram", "--queue_name=ExamplePromptQueue" ]
