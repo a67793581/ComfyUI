@@ -9,10 +9,10 @@ services:
       - NVIDIA_VISIBLE_DEVICES=0
     image: comfy:10.02
     volumes:
-      - /data/code/comfy_models:/root/comfyui_info/ComfyUI/models
+      - /DATA/disk1/code/comfy_models:/root/comfyui_info/ComfyUI/models
       - ./custom_nodes:/root/comfyui_info/ComfyUI/custom_nodes
-      - /data/filebrowser/comfyui_input/comfy0:/root/comfyui_info/ComfyUI/input
-      - /data/filebrowser/comfyui_output/comfy0:/root/comfyui_info/ComfyUI/output
+      - /DATA/disk1/filebrowser/comfyui_input/comfy0:/root/comfyui_info/ComfyUI/input
+      - /DATA/disk1/filebrowser/comfyui_output/comfy0:/root/comfyui_info/ComfyUI/output
     ports:
       - "9100:8188"
     command: [ "python3.10", "main.py", "--listen","--highvram", "--queue_name=ExamplePromptQueue" ]
@@ -24,10 +24,10 @@ services:
       - NVIDIA_VISIBLE_DEVICES=1
     image: comfy:10.02
     volumes:
-      - /data/code/comfy_models:/root/comfyui_info/ComfyUI/models
+      - /DATA/disk1/code/comfy_models:/root/comfyui_info/ComfyUI/models
       - ./custom_nodes:/root/comfyui_info/ComfyUI/custom_nodes
-      - /data/filebrowser/comfyui_input/comfy1:/root/comfyui_info/ComfyUI/input
-      - /data/filebrowser/comfyui_output/comfy1:/root/comfyui_info/ComfyUI/output
+      - /DATA/disk1/filebrowser/comfyui_input/comfy1:/root/comfyui_info/ComfyUI/input
+      - /DATA/disk1/filebrowser/comfyui_output/comfy1:/root/comfyui_info/ComfyUI/output
     ports:
       - "9101:8188"
     command: [ "python3.10", "main.py", "--listen","--highvram", "--queue_name=ExamplePromptQueue" ]
@@ -39,10 +39,10 @@ services:
       - NVIDIA_VISIBLE_DEVICES=2
     image: comfy:10.02
     volumes:
-      - /data/code/comfy_models:/root/comfyui_info/ComfyUI/models
+      - /DATA/disk1/code/comfy_models:/root/comfyui_info/ComfyUI/models
       - ./custom_nodes:/root/comfyui_info/ComfyUI/custom_nodes
-      - /data/filebrowser/comfyui_input/comfy2:/root/comfyui_info/ComfyUI/input
-      - /data/filebrowser/comfyui_output/comfy2:/root/comfyui_info/ComfyUI/output
+      - /DATA/disk1/filebrowser/comfyui_input/comfy2:/root/comfyui_info/ComfyUI/input
+      - /DATA/disk1/filebrowser/comfyui_output/comfy2:/root/comfyui_info/ComfyUI/output
     ports:
       - "9102:8188"
     command: [ "python3.10", "main.py", "--listen","--highvram", "--queue_name=ExamplePromptQueue" ]
@@ -54,10 +54,10 @@ services:
       - NVIDIA_VISIBLE_DEVICES=3
     image: comfy:10.02
     volumes:
-      - /data/code/comfy_models:/root/comfyui_info/ComfyUI/models
+      - /DATA/disk1/code/comfy_models:/root/comfyui_info/ComfyUI/models
       - ./custom_nodes:/root/comfyui_info/ComfyUI/custom_nodes
-      - /data/filebrowser/comfyui_input/comfy3:/root/comfyui_info/ComfyUI/input
-      - /data/filebrowser/comfyui_output/comfy3:/root/comfyui_info/ComfyUI/output
+      - /DATA/disk1/filebrowser/comfyui_input/comfy3:/root/comfyui_info/ComfyUI/input
+      - /DATA/disk1/filebrowser/comfyui_output/comfy3:/root/comfyui_info/ComfyUI/output
     ports:
       - "9103:8188"
     command: [ "python3.10", "main.py", "--listen","--highvram", "--queue_name=ExamplePromptQueue" ]
@@ -69,55 +69,10 @@ services:
       - NVIDIA_VISIBLE_DEVICES=4
     image: comfy:10.02
     volumes:
-      - /data/code/comfy_models:/root/comfyui_info/ComfyUI/models
+      - /DATA/disk1/code/comfy_models:/root/comfyui_info/ComfyUI/models
       - ./custom_nodes:/root/comfyui_info/ComfyUI/custom_nodes
-      - /data/filebrowser/comfyui_input/comfy4:/root/comfyui_info/ComfyUI/input
-      - /data/filebrowser/comfyui_output/comfy4:/root/comfyui_info/ComfyUI/output
+      - /DATA/disk1/filebrowser/comfyui_input/comfy4:/root/comfyui_info/ComfyUI/input
+      - /DATA/disk1/filebrowser/comfyui_output/comfy4:/root/comfyui_info/ComfyUI/output
     ports:
       - "9104:8188"
-    command: [ "python3.10", "main.py", "--listen","--highvram", "--queue_name=ExamplePromptQueue" ]
-  comfy5:
-    container_name: comfy5
-    tty: true
-    runtime: nvidia
-    environment:
-      - NVIDIA_VISIBLE_DEVICES=5
-    image: comfy:10.02
-    volumes:
-      - /data/code/comfy_models:/root/comfyui_info/ComfyUI/models
-      - ./custom_nodes:/root/comfyui_info/ComfyUI/custom_nodes
-      - /data/filebrowser/comfyui_input/comfy5:/root/comfyui_info/ComfyUI/input
-      - /data/filebrowser/comfyui_output/comfy5:/root/comfyui_info/ComfyUI/output
-    ports:
-      - "9105:8188"
-    command: [ "python3.10", "main.py", "--listen","--highvram", "--queue_name=ExamplePromptQueue" ]
-  comfy6:
-    container_name: comfy6
-    tty: true
-    runtime: nvidia
-    environment:
-      - NVIDIA_VISIBLE_DEVICES=6
-    image: comfy:10.02
-    volumes:
-      - /data/code/comfy_models:/root/comfyui_info/ComfyUI/models
-      - ./custom_nodes:/root/comfyui_info/ComfyUI/custom_nodes
-      - /data/filebrowser/comfyui_input/comfy6:/root/comfyui_info/ComfyUI/input
-      - /data/filebrowser/comfyui_output/comfy6:/root/comfyui_info/ComfyUI/output
-    ports:
-      - "9106:8188"
-    command: [ "python3.10", "main.py", "--listen","--highvram", "--queue_name=ExamplePromptQueue" ]
-  comfy7:
-    container_name: comfy7
-    tty: true
-    runtime: nvidia
-    environment:
-      - NVIDIA_VISIBLE_DEVICES=7
-    image: comfy:10.02
-    volumes:
-      - /data/code/comfy_models:/root/comfyui_info/ComfyUI/models
-      - ./custom_nodes:/root/comfyui_info/ComfyUI/custom_nodes
-      - /data/filebrowser/comfyui_input/comfy7:/root/comfyui_info/ComfyUI/input
-      - /data/filebrowser/comfyui_output/comfy7:/root/comfyui_info/ComfyUI/output
-    ports:
-      - "9107:8188"
     command: [ "python3.10", "main.py", "--listen","--highvram", "--queue_name=ExamplePromptQueue" ]
