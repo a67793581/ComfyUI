@@ -1,4 +1,4 @@
-FROM comfy:10.01
+FROM comfy:10.03
 
 ENV LANG C.UTF-8
 ENV TZ=Asia/Shangha
@@ -38,7 +38,7 @@ RUN sed -i 's@http://security.ubuntu.com/ubuntu@http://mirrors.aliyun.com/ubuntu
 #    apt-get clean && \
 #    rm -rf /var/lib/apt/lists/*
 #RUN python3.10 -m pip install sentencepiece addict tomesd segment-anything piexif keyframed toolz pytz py-cpuinfo tzdata pandas seaborn ultralytics-thop ultralytics lark-parser diffusers GitPython
-
-
+#RUN python3.10 -m pip install etcd3
+RUN python3.10 -m pip install protobuf==3.20.3
 COPY . /root/comfyui_info/ComfyUI
 WORKDIR /root/comfyui_info/ComfyUI
