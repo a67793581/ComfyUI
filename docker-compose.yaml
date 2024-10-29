@@ -44,7 +44,7 @@ services:
       - NAME=${NAME}
       - DEBUG=${DEBUG}
       - ENV=${ENV}
-    image: comfy:10.03
+    image: comfy:10.04
     volumes:
       - /DATA/disk1/code/comfy_models:/root/comfyui_info/ComfyUI/models
       - ./custom_nodes:/root/comfyui_info/ComfyUI/custom_nodes
