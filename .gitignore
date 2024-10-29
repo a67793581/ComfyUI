@@ -25,3 +25,4 @@ custom_nodes_bak
 *.log
 web_custom_versions/
 .DS_Store
+.env

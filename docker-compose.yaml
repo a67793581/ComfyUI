@@ -38,6 +38,12 @@ services:
     runtime: nvidia
     environment:
       - NVIDIA_VISIBLE_DEVICES=2
+      - HOST=${HOST}
+      - IP=${IP}
+      - PORT=9099
+      - NAME=${NAME}
+      - DEBUG=${DEBUG}
+      - ENV=${ENV}
     image: comfy:10.02
     volumes:
       - /DATA/disk1/code/comfy_models:/root/comfyui_info/ComfyUI/models
