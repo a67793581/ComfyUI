@@ -7,7 +7,13 @@ services:
     runtime: nvidia
     environment:
       - NVIDIA_VISIBLE_DEVICES=0
-    image: comfy:10.02
+      - HOST=${HOST}
+      - IP=${IP}
+      - PORT=9100
+      - NAME=${NAME}
+      - DEBUG=${DEBUG}
+      - ENV=${ENV}
+    image: comfy:10.04
     volumes:
       - /DATA/disk1/code/comfy_models:/root/comfyui_info/ComfyUI/models
       - ./custom_nodes:/root/comfyui_info/ComfyUI/custom_nodes
@@ -22,7 +28,13 @@ services:
     runtime: nvidia
     environment:
       - NVIDIA_VISIBLE_DEVICES=1
-    image: comfy:10.02
+      - HOST=${HOST}
+      - IP=${IP}
+      - PORT=9101
+      - NAME=${NAME}
+      - DEBUG=${DEBUG}
+      - ENV=${ENV}
+    image: comfy:10.04
     volumes:
       - /DATA/disk1/code/comfy_models:/root/comfyui_info/ComfyUI/models
       - ./custom_nodes:/root/comfyui_info/ComfyUI/custom_nodes
@@ -37,7 +49,13 @@ services:
     runtime: nvidia
     environment:
       - NVIDIA_VISIBLE_DEVICES=2
-    image: comfy:10.02
+      - HOST=${HOST}
+      - IP=${IP}
+      - PORT=9102
+      - NAME=${NAME}
+      - DEBUG=${DEBUG}
+      - ENV=${ENV}
+    image: comfy:10.04
     volumes:
       - /DATA/disk1/code/comfy_models:/root/comfyui_info/ComfyUI/models
       - ./custom_nodes:/root/comfyui_info/ComfyUI/custom_nodes
@@ -45,19 +63,4 @@ services:
       - /DATA/disk1/filebrowser/comfyui_output/comfy2:/root/comfyui_info/ComfyUI/output
     ports:
       - "9102:8188"
-    command: [ "python3.10", "main.py", "--listen","--highvram", "--queue_name=ExamplePromptQueue" ]
-  comfy3:
-    container_name: comfy3
-    tty: true
-    runtime: nvidia
-    environment:
-      - NVIDIA_VISIBLE_DEVICES=3
-    image: comfy:10.02
-    volumes:
-      - /DATA/disk1/code/comfy_models:/root/comfyui_info/ComfyUI/models
-      - ./custom_nodes:/root/comfyui_info/ComfyUI/custom_nodes
-      - /DATA/disk1/filebrowser/comfyui_input/comfy3:/root/comfyui_info/ComfyUI/input
-      - /DATA/disk1/filebrowser/comfyui_output/comfy3:/root/comfyui_info/ComfyUI/output
-    ports:
-      - "9103:8188"
     command: [ "python3.10", "main.py", "--listen","--highvram", "--queue_name=ExamplePromptQueue" ]
