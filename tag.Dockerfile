@@ -1,8 +1,8 @@
 FROM comfy:10.03
 
 ENV LANG C.UTF-8
-ENV TZ=Asia/Shangha
-ENV NUMBA_THREADING_LAYER_PRIORITY="omp tbb workqueue"
+ENV TZ Asia/Shangha
+ENV NUMBA_THREADING_LAYER_PRIORITY "omp tbb workqueue"
 # 设置环境变量，使用阿里云pip镜像源
 ARG PIP_INDEX_URL=https://mirrors.aliyun.com/pypi/simple/
 # 使用阿里云的源替换默认源
