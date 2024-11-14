@@ -1,49 +1,30 @@
-version: '2.4'
-
 services:
-  comfy0:
-    container_name: comfy_dev0
-    tty: true
-    runtime: nvidia
-    environment:
-      - NVIDIA_VISIBLE_DEVICES=0
-    image: comfy:10.01
-    volumes:
-      - /data/code/comfy_models:/root/comfyui_info/ComfyUI/models
-      - ./custom_nodes:/root/comfyui_info/ComfyUI/custom_nodes
-      - /data/filebrowser/comfyui_input/comfy_dev0:/root/comfyui_info/ComfyUI/input
-      - /data/filebrowser/comfyui_output/comfy_dev0:/root/comfyui_info/ComfyUI/output
-    ports:
-      - "9201:8188"
-    command: [ "python3.10", "main.py", "--listen", "--queue_name=ExamplePromptQueue" ]
-  comfy1:
-    container_name: comfy_dev1
-    tty: true
-    runtime: nvidia
-    environment:
-      - NVIDIA_VISIBLE_DEVICES=1
-    image: comfy:10.01
-    volumes:
-      - /data/code/comfy_models:/root/comfyui_info/ComfyUI/models
-      - ./custom_nodes:/root/comfyui_info/ComfyUI/custom_nodes
-      - /data/filebrowser/comfyui_input/comfy_dev1:/root/comfyui_info/ComfyUI/input
-      - /data/filebrowser/comfyui_output/comfy_dev1:/root/comfyui_info/ComfyUI/output
-    ports:
-      - "9200:8188"
-    command: [ "python3.10", "main.py", "--listen", "--queue_name=ExamplePromptQueue" ]
-
+  # test:
+  #   image: comfy:11
+  #   command: nvidia-smi
+  #   deploy:
+  #     resources:
+  #       reservations:
+  #         devices:
+  #           - driver: nvidia
+  #             count: 1
+  #             capabilities: [gpu]
   comfy_pre:
     container_name: comfy_pre
     tty: true
-    runtime: nvidia
-    environment:
-      - NVIDIA_VISIBLE_DEVICES=1
-    image: comfy:10.01
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    image: comfy:11
     volumes:
-      - /data/code/comfy_models:/root/comfyui_info/ComfyUI/models
+      - ../comfy_models:/root/comfyui_info/ComfyUI/models
       - ./custom_nodes:/root/comfyui_info/ComfyUI/custom_nodes
-      - /data/filebrowser/comfyui_input/comfy_pre:/root/comfyui_info/ComfyUI/input
-      - /data/filebrowser/comfyui_output/comfy_pre:/root/comfyui_info/ComfyUI/output
+      - ../comfyui_input/comfy_pre:/root/comfyui_info/ComfyUI/input
+      - ../comfyui_output/comfy_pre:/root/comfyui_info/ComfyUI/output
     ports:
       - "9099:8188"
     command: [ "python3.10", "main.py", "--listen=0.0.0.0" ]
