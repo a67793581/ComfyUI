@@ -27,3 +27,4 @@ custom_nodes_bak
 web_custom_versions/
 .DS_Store
 .env
+.devcontainer
