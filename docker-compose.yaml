@@ -18,11 +18,12 @@ services:
           devices:
             - driver: nvidia
               count: 1
-              capabilities: [gpu]
-    image: comfy:11
+              capabilities: [ gpu ]
+    image: comfy:12
     environment:
       - ENV=${ENV}
       - MALIANG_TASK_CALLBACK=${MALIANG_TASK_CALLBACK}
+
     volumes:
       - ../comfy_models:/root/comfyui_info/ComfyUI/models
       - ./custom_nodes:/root/comfyui_info/ComfyUI/custom_nodes
