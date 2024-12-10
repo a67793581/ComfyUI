@@ -20,6 +20,9 @@ services:
               count: 1
               capabilities: [gpu]
     image: comfy:11
+    environment:
+      - ENV=${ENV}
+      - MALIANG_TASK_CALLBACK=${MALIANG_TASK_CALLBACK}
     volumes:
       - ../comfy_models:/root/comfyui_info/ComfyUI/models
       - ./custom_nodes:/root/comfyui_info/ComfyUI/custom_nodes
@@ -27,4 +30,4 @@ services:
       - ../comfyui_output/comfy_pre:/root/comfyui_info/ComfyUI/output
     ports:
       - "9099:8188"
-    command: [ "python3.10", "main.py", "--listen=0.0.0.0" ]
+    command: [ "python3.10", "main.py", "--listen=0.0.0.0", "--queue_name=ExamplePromptQueue" ]
