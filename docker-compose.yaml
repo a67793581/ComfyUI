@@ -19,7 +19,7 @@ services:
             - driver: nvidia
               count: 1
               capabilities: [ gpu ]
-    image: comfy:13
+    image: comfy:15
     environment:
       - ENV=${ENV}
       - MALIANG_TASK_CALLBACK=${MALIANG_TASK_CALLBACK}
@@ -28,7 +28,7 @@ services:
       - ../comfy_models:/root/comfyui_info/ComfyUI/models:cached
       - ./custom_nodes:/root/comfyui_info/ComfyUI/custom_nodes:cached
       - ./queues:/root/comfyui_info/ComfyUI/queues:cached
-      - ../comfyui_input/comfy_pre:/rFoot/comfyui_info/ComfyUI/input:delegated
+      - ../comfyui_input/comfy_pre:/root/comfyui_info/ComfyUI/input:delegated
       - ../comfyui_output/comfy_pre:/root/comfyui_info/ComfyUI/output:delegated
     ports:
       - "9099:8188"
