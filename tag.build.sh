@@ -1,1 +1,1 @@
-docker build -t comfy -f tag.Dockerfile . && docker tag comfy:latest comfy:12
+docker build -t comfy -f tag.Dockerfile . && docker tag comfy:latest comfy:14

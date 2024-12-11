@@ -30,6 +30,6 @@ FROM comfy:latest
 # RUN python3.10 -m pip install sentencepiece addict tomesd segment-anything piexif keyframed toolz pytz py-cpuinfo tzdata pandas seaborn ultralytics-thop ultralytics lark-parser diffusers GitPython
 # RUN python3.10 -m pip install etcd3
 # RUN python3.10 -m pip install protobuf==3.20.3
-# COPY . /root/comfyui_info/ComfyUI
-# WORKDIR /root/comfyui_info/ComfyUI
+COPY . /root/comfyui_info/ComfyUI
+WORKDIR /root/comfyui_info/ComfyUI
 # RUN python3.10 -m pip install -r requirements.txt
