@@ -1,0 +1,56 @@
+import json
+import copy
+import os
+import logging
+
+import requests
+
+from execution import PromptQueue, MAXIMUM_HISTORY_SIZE
+from typing import Optional
+
+
+class ExamplePromptQueue(PromptQueue):  # Child类继承自Parent类
+    def task_done(self, item_id, outputs,
+                  status: Optional['PromptQueue.ExecutionStatus']):
+        with self.mutex:
+            prompt = self.currently_running.pop(item_id)
+            if len(self.history) > MAXIMUM_HISTORY_SIZE:
+                self.history.pop(next(iter(self.history)))
+
+            status_dict: Optional[dict] = None
+            if status is not None:
+                status_dict = copy.deepcopy(status._asdict())
+
+            self.history[prompt[1]] = {
+                "prompt": prompt,
+                "outputs": copy.deepcopy(outputs),
+                'status': status_dict,
+            }
+
+            try:
+                # 将字典转换为JSON字符串
+                history_json = json.dumps(self.history[prompt[1]])
+
+                # 构建请求参数
+                payload = {
+                    "task_res": history_json,
+                    "prompt_id": prompt[1]
+                }
+
+                # 发送POST请求
+                task_callback = os.getenv('MALIANG_TASK_CALLBACK', "http://maliang-core-bj-dev.ksc-spatio-inc.com/inner/ai/task_callback")
+                response = requests.post(task_callback, data=payload)
+
+                # 检查响应状态码
+                if response.status_code == 200:
+                    logging.info("数据成功发送到马良服务器")
+                else:
+                    logging.info(f"发送到马良服务器失败，状态码：{response.status_code}")
+            except Exception as e:
+                logging.info(f"发送到马良服务器时发生错误：{e}")
+            self.server.queue_updated()
+
+
+QUEUE_CLASS_MAPPINGS = {
+    "ExamplePromptQueue": ExamplePromptQueue
+}
