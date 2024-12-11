@@ -12,6 +12,7 @@ services:
   comfy_pre:
     container_name: comfy_pre
     tty: true
+    restart: unless-stopped
     deploy:
       resources:
         reservations:
