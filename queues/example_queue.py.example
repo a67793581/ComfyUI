@@ -38,7 +38,7 @@ class ExamplePromptQueue(PromptQueue):  # Child类继承自Parent类
                 }
 
                 # 发送POST请求
-                task_callback = os.getenv('MALIANG_TASK_CALLBACK', "http://maliang-core-bj-dev.ksc-spatio-inc.com/inner/ai/task_callback")
+                task_callback = os.getenv('MALIANG_TASK_CALLBACK', "http://maliang-core-dev.spatio-inc.com/inner/ai/task_callback")
                 response = requests.post(task_callback, data=payload)
 
                 # 检查响应状态码
