@@ -32,4 +32,4 @@ services:
       - ../comfyui_output/comfy_pre:/root/comfyui_info/ComfyUI/output
     ports:
       - "9099:8188"
-    command: [ "python3.10", "main.py", "--listen=0.0.0.0", "--queue_name=ExamplePromptQueue" ]
+    command: [ "python3.10", "main.py", "--listen=0.0.0.0","--highvram", "--queue_name=ExamplePromptQueue" ]
