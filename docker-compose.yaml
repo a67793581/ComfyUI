@@ -25,11 +25,11 @@ services:
       - MALIANG_TASK_CALLBACK=${MALIANG_TASK_CALLBACK}
 
     volumes:
-      - ../comfy_models:/root/comfyui_info/ComfyUI/models
-      - ./custom_nodes:/root/comfyui_info/ComfyUI/custom_nodes
-      - ./queues:/root/comfyui_info/ComfyUI/queues
-      - ../comfyui_input/comfy_pre:/rFoot/comfyui_info/ComfyUI/input
-      - ../comfyui_output/comfy_pre:/root/comfyui_info/ComfyUI/output
+      - ../comfy_models:/root/comfyui_info/ComfyUI/models:cached
+      - ./custom_nodes:/root/comfyui_info/ComfyUI/custom_nodes:cached
+      - ./queues:/root/comfyui_info/ComfyUI/queues:cached
+      - ../comfyui_input/comfy_pre:/rFoot/comfyui_info/ComfyUI/input:delegated
+      - ../comfyui_output/comfy_pre:/root/comfyui_info/ComfyUI/output:delegated
     ports:
       - "9099:8188"
     command: [ "python3.10", "main.py", "--listen=0.0.0.0","--highvram", "--queue_name=ExamplePromptQueue" ]
